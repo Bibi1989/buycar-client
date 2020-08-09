@@ -11,15 +11,15 @@ import {
 } from "./actions";
 import { PriceQueryType, AllQueryType } from "../../Interfaces/QueryInterface";
 
-const count_url = `http://localhost:5000/api/v1/count`;
-const cars_url = `http://localhost:5000/api/v1/cars`;
-const make_url = `http://localhost:5000/api/v1/makes`;
-const model_url = `http://localhost:5000/api/v1/models`;
-const price_url = `http://localhost:5000/api/v1/prices`;
-const all_url = `http://localhost:5000/api/v1/prices`;
-const base_on_make_url = `http://localhost:5000/api/v1/cars/make`;
+const count_url = `https://buyyourcar-api.herokuapp.com/api/v1/count`;
+const cars_url = `https:buyyourcar-api.herokuapp.com/api/v1/cars`;
+const make_url = `https://buyyourcar-api.herokuapp.com/api/v1/makes`;
+const model_url = `https://buyyourcar-api.herokuapp.com/api/v1/models`;
+const price_url = `https://buyyourcar-api.herokuapp.com/api/v1/prices`;
+const all_url = `https://buyyourcar-api.herokuapp.com/api/v1/prices`;
+const base_on_make_url = `https://buyyourcar-api.herokuapp.com/api/v1/cars/make`;
 
-const single_url = `http://localhost:5000/api/v1/cars`;
+const single_url = `https://buyyourcar-api.herokuapp.com/api/v1/cars`;
 
 export const fetchCars = async (dispatch: any, page: number, limit: number) => {
   try {
