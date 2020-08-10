@@ -52,6 +52,7 @@ const Sidebar = () => {
 
   const handleSearch = () => {
     searchParams(history, select);
+    getCarModels(dispatch, select.make);
   };
   // const handleClick = () => {};
 

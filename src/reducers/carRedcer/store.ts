@@ -39,9 +39,10 @@ export const addCar = async (dispatch: any, car: any) => {
 export const fetchCars = async (dispatch: any, page: number, limit: number) => {
   try {
     dispatch(loadingAction(true));
-    const response = await fetch(`${cars_url}?page=${page}&limit=${limit}`);
-    const result: any = await response.json();
-    dispatch(fetchCarsAction(result.data));
+    // const response = await fetch(`${cars_url}?page=${page}&limit=${limit}`);
+    // const result: any = await response.json();
+    const result = await axios.get(`${cars_url}?page=${page}&limit=${limit}`);
+    dispatch(fetchCarsAction(result.data.data));
     dispatch(loadingAction(false));
   } catch (error) {
     dispatch(loadingAction(false));

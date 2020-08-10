@@ -70,7 +70,7 @@ const Vehicles = () => {
         </Divider>
         <div>
           {loading ? <Spinner /> : cars.length <= 0 && <Empty />}
-          {cars.map((car: any) => (
+          {filter_cars.map((car: any) => (
             <Vehicle key={car._id} car={car} />
           ))}
           {filter_cars.length > 0 && (
