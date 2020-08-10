@@ -6,13 +6,13 @@ const Navbar = () => {
   return (
     <NavStyle>
       <Left>
-        <Link className='links' to='/?page=1'>
+        <Link className='links' to='/'>
           Car Trader
         </Link>
       </Left>
       <Right>
         <div>
-          <Link className='links' to='/?page=1'>
+          <Link className='links' to='/'>
             Home
           </Link>
         </div>
