@@ -68,7 +68,7 @@ const Sidebar = () => {
         icon={<KeyOutlined />}
         size='large'
         style={{ width: "100%", marginTop: "2em" }}
-        onClick={() => history.push("/")}
+        onClick={() => history.push("/?page=1")}
       >
         All Cars ({count})
       </Button>

@@ -17,7 +17,7 @@ const Vehicles = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const query = useQuery(useLocation);
-  const [limit] = useState(5);
+  const [limit] = useState(4);
 
   const cars = useSelector(({ cars: { cars } }: any) => cars);
   const filter_make = useSelector(

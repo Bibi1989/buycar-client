@@ -5,8 +5,9 @@ export const searchParams = (history: any, obj: any) => {
   history.push(`?${query}`);
 };
 export const viewCarParams = (history: any, obj: any) => {
-  let query = `make=${obj.make}&model=${obj.model}&id=${obj.id}`;
-  history.push(`car?${query}`);
+  let query = `${obj.make}/${obj.model.split(" ")[0]}?id=${obj.id}`;
+  // let query = `make=${obj.make}&model=${obj.model}&id=${obj.id}`;
+  history.push(`car/${query}`);
 };
 
 export function useQuery(useLocation: any) {

@@ -9,6 +9,7 @@ import {
   FILTER_MAKE,
   COUNT,
   FETCH_CAR,
+  ADD_CAR,
 } from "./actions";
 
 const initialState = {
@@ -30,6 +31,11 @@ const CarReducer = (state = initialState, action: any) => {
       return {
         ...state,
         cars: [...action.payload],
+      };
+    case ADD_CAR:
+      return {
+        ...state,
+        cars: [action.payload, ...state.cars],
       };
     case FETCH_CAR:
       return {

@@ -24,15 +24,16 @@ const Vehicle = ({ car }: any) => {
     model,
     id: _id,
   };
-  const handleNav = (id: any) => {
+  const handleNav = () => {
     viewCarParams(history, query);
     // history.push(`/car?${name}&${model}&${id}`);
   };
+  const image = JSON.parse(photo_url)[0];
   return (
-    <Row gutter={[16, 16]} style={{ width: "100%" }} align='middle'>
+    <Row gutter={[16, 16]} style={{ width: "100%" }} align='top'>
       <Col xxl={12} xl={12} lg={12} md={24} sm={24} xs={24}>
-        <Image onClick={() => handleNav(_id)}>
-          <img src={photo_url} alt='cars poster' />
+        <Image onClick={() => handleNav()}>
+          <img src={image} alt='cars poster' />
         </Image>
       </Col>
       <Col xxl={12} xl={12} lg={12} md={24} sm={24} xs={24}>
@@ -55,7 +56,7 @@ const Vehicle = ({ car }: any) => {
 export default Vehicle;
 
 const Image = styled.div`
-  max-height: 100%;
+  max-height: 45vh;
   overflow: hidden;
   cursor: pointer;
 

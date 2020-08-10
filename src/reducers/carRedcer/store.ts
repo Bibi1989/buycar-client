@@ -1,4 +1,6 @@
+import axios from "axios";
 import {
+  addCarAction,
   fetchCarsAction,
   getCarMakeAction,
   getCarModelAction,
@@ -11,6 +13,7 @@ import {
 } from "./actions";
 import { PriceQueryType, AllQueryType } from "../../Interfaces/QueryInterface";
 
+// const cars_url_local = `http://localhost:5000/api/v1/cars`;
 const count_url = `https://buyyourcar-api.herokuapp.com/api/v1/count`;
 const cars_url = `https:buyyourcar-api.herokuapp.com/api/v1/cars`;
 const make_url = `https://buyyourcar-api.herokuapp.com/api/v1/makes`;
@@ -21,6 +24,18 @@ const base_on_make_url = `https://buyyourcar-api.herokuapp.com/api/v1/cars/make`
 
 const single_url = `https://buyyourcar-api.herokuapp.com/api/v1/cars`;
 
+export const addCar = async (dispatch: any, car: any) => {
+  console.log(car);
+  try {
+    dispatch(loadingAction(true));
+    const response = await axios.post(cars_url, car);
+    dispatch(addCarAction(response.data.data));
+    dispatch(loadingAction(false));
+  } catch (error) {
+    dispatch(loadingAction(false));
+    dispatch(errorAction(error.response));
+  }
+};
 export const fetchCars = async (dispatch: any, page: number, limit: number) => {
   try {
     dispatch(loadingAction(true));

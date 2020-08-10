@@ -1,3 +1,4 @@
+export const ADD_CAR = "ADD_CAR";
 export const FETCH_CARS = "FETCH_CARS";
 export const FETCH_CAR = "FETCH_CAR";
 export const CAR_MAKE = "CAR_MAKE";
@@ -9,6 +10,12 @@ export const COUNT = "COUNT";
 export const LOADING = "LOADING";
 export const ERROR = "ERROR";
 
+export const addCarAction = (payload: any) => {
+  return {
+    type: ADD_CAR,
+    payload,
+  };
+};
 export const fetchCarsAction = (payload: any) => {
   return {
     type: FETCH_CARS,
